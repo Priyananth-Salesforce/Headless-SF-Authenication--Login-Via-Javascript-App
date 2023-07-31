@@ -21,14 +21,11 @@ global class CodeExchangeAPI {
        String clientId = '<Connected App Client Id>';
        String redirectURL = '<Your Experience Site Base URL>/services/apexrest/code/exchangeCodeToAccessToken';
        String clientSecret = '<Connected App Client Secret>';
-      
        Http h = new Http();
        HttpRequest req = new HttpRequest();
        req.setMethod('POST');
-      
        String url = communityURL + '/services/oauth2/token';
        req.setEndpoint(url);
-      
        String body = 'grant_type=authorization_code';
        body = body + '&client_id=' + clientId;
        body = body + '&code=' + code;
@@ -36,13 +33,9 @@ global class CodeExchangeAPI {
           body = body + '&client_secret=' + clientSecret;
        }
        body = body + '&redirect_uri=' + redirectURL;
-      
        String encodedBody = EncodingUtil.urlEncode(body, 'UTF-8');
-      
        req.setBody(body);
-      
        req.setHeader('Content-Type','application/x-www-form-urlencoded');
-      
        HttpResponse res = h.send(req);
        if (res.getStatusCode() == 200) {
            Map<String,Object> tokenResponseMap = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
