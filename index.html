@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SF Experience Cloud App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div class="container">
+            <script type="text/javascript" src="./main.js"></script>
+            <div class="row">
+                <div class="col">
+                    <p><h2>sign in</h2></p>
+                    <input type="text" id="username" placeholder="Username" autocomplete="off" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="submit" id="login" onclick="startLogin();return false;" value="Login">
+                </div>    
+            </div>
+            <div class="row">
+                <h4 id='result'></h4>
+            </div>
+        </div>
+    </body>
+</html>
